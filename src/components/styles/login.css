@@ -1,0 +1,85 @@
+.login_parent_container {
+    height: 100vh;
+    width: 100%;
+    background: #AFD4C0;
+    box-sizing: border-box;
+}
+
+.login_wrapper {
+    background: #F6F0F0;
+    height: 100vh;
+    width: 60%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.logo_container{
+    padding-top: 20%;
+    margin: 0 18em;
+}
+
+.input_container {
+    margin: 0 5em;
+}
+
+.input_container input {
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+    font-size: 1em;
+    
+}
+
+.button_container {
+    margin: 15px auto;
+    width: 290px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.login_button {
+    width: 130px;
+    height: 40px;
+    background: #8AEA92;
+    color: black;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: .18em;
+}
+
+.register_button {
+    width: 130px;
+    height: 40px;
+    background: #519872;
+    color: #F6F0F0;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: .18em;
+}
+
+.login_button:hover {
+    cursor: pointer;
+
+}
+
+.register_button:hover {
+    cursor: pointer;
+}
+
+.login_button:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4)
+}
+
+.register_button:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4)    
+}
+
+.input:active {
+    
+}
