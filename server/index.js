@@ -13,9 +13,7 @@ const express = require('express'),
             SESSION_SECRET
       } = process.env
 
-  massive(CONNECTION_STRING).then( db => {
-            app.set('db', db)
-      })
+  
 
 const app = express()
 
@@ -33,10 +31,13 @@ app.use(session({
 
 app.use(checkForSession)
 
- 
+app.get('/api/me', ctrl.userValidate)
 app.post('/api/auth/register', ctrl.register)
 app.post('/api/auth/login', ctrl.login)
+app.post('/api/auth/logout', ctrl.logout)
 
-
-app.listen(SERVER_PORT, () => {console.log(`Server listening on port ${SERVER_PORT}...`)});
+massive(CONNECTION_STRING).then( db => {
+      app.set('db', db)
+      app.listen(SERVER_PORT, () => {console.log(`Server listening on port ${SERVER_PORT}...`)});
+})
 

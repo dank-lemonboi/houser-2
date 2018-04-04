@@ -1,5 +1,5 @@
 const initialState = {
-    userName: '',
+    username: '',
     password: '',
 }
 
@@ -23,7 +23,7 @@ export function getPassword(password) {
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case GET_USERNAME:
-           return Object.assign({}, state, { userName: action.payload } )
+           return Object.assign({}, state, { username: action.payload } )
         
         case GET_PASSWORD:
            return Object.assign({}, state, { password: action.payload } )

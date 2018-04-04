@@ -8,7 +8,7 @@ import wizard1 from './components/wizard/wizard1'
 
 export default (
     <Switch>
-      <Route path='/' component={login} exact />
+      <Route exact path='/' component={login} />
       <Route path='/dashboard' component={dashboard} />
       <Route path='/wizard1' component={wizard1} />
     </Switch>
