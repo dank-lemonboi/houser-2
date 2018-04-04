@@ -1,0 +1,44 @@
+.header_parent {
+    background: #519872;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    font-family: 'Open Sans', sans-serif
+}
+
+.header_container {
+    display: flex;
+    width: 57%;
+    justify-content: space-between;
+}
+
+img {
+    height: 50%;
+    margin: auto 0;
+}
+
+p {
+    margin-left: 8px;
+    font-size: 30px
+}
+
+#Houser {
+    font-weight: 600;
+}
+
+.header_div_left {
+    display: flex;
+    align-items: center;
+}
+
+.header_div_right {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header_div_right div:hover {
+    cursor: pointer;
+}

@@ -1,33 +1,30 @@
 import React, { Component } from 'react'
+import { Link }  from 'react-router-dom'
 import axios from 'axios'
 import Header from './header'
+
+import './styles/dashboard.css'
 
 
 export default class Dashboard extends Component {
     constructor() {
         super()
-
-        this.logout = this.logout.bind(this)
     }
-    componentDidMount() {
-        axios.get('/api/me').then( () => {
-            console.log('good job!')
-        }).catch( () => {this.props.history.push('/')})
-    }
+    // componentDidMount() {
+    //     axios.get('/api/me').then( () => {
+    //         console.log('good job!')
+    //     }).catch( () => {this.props.history.push('/')})
+    // }
     
-
-    logout() {
-        axios.post('/api/auth/logout')
-        .then( () => console.log('User Logged out'))
-        this.props.history.push('/')
-    }
-
     render(){
-        console.log(this)
     return(
-        <div>
-            <p>Dashboard view!</p>
-            <button onClick={ () => this.logout()}>logout</button>
+        <div className='dashboard_container_parent'>
+        <Header />
+                <div className='dashboard_container'>
+                <Link to='/wizard1'>
+                  <div className='new_property_button'>Add New Property</div>
+                </Link>
+                </div>
         </div>
     )
  } 
