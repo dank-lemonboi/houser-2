@@ -7,14 +7,12 @@ import './styles/dashboard.css'
 
 
 export default class Dashboard extends Component {
-    constructor() {
-        super()
+    
+    componentDidMount() {
+        axios.get('/api/me').then( () => {
+            console.log('good job!')
+        }).catch( () => {this.props.history.push('/')})
     }
-    // componentDidMount() {
-    //     axios.get('/api/me').then( () => {
-    //         console.log('good job!')
-    //     }).catch( () => {this.props.history.push('/')})
-    // }
     
     render(){
     return(

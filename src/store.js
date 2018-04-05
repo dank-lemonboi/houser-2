@@ -1,5 +1,5 @@
-import { createStore, combineReducers } from 'redux'
-import userReducer from './ducks/userReducer'
+import { createStore } from 'redux'
+
 import houseReducer from './ducks/houseReducer'
 
-export default createStore( combineReducers( {userReducer, houseReducer} ) )
+export default createStore(houseReducer)

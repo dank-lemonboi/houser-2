@@ -1,0 +1,16 @@
+.image_preview {
+    height: 302px;
+    width: 505px;
+    background: #f6f0f0;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #3b5349;
+}
+
+.image_container {
+    height: 98%;
+    width: 99%;
+    vertical-align: middle;
+}
