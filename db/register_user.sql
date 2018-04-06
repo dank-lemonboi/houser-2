@@ -7,4 +7,4 @@ VALUES (
     $2
 )
 
-RETURNING *;
+-- RETURNING *;

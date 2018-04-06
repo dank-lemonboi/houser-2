@@ -4,6 +4,8 @@ CREATE TABLE houses (
     description TEXT,
     address TEXT,
     city VARCHAR(100),
+    state VARCHAR(40),
+    zip integer,
     image_url TEXT,
     loan INTEGER,
     mortgage INTEGER,

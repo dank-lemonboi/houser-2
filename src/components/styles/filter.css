@@ -1,0 +1,60 @@
+.filter_body {
+    width: 70%;
+    height: 80px;
+    margin-left: 15%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+span {
+    box-sizing: border-box;
+}
+
+.filter_input {
+    height: 38px;
+    width: 85px;
+    border-radius: .4em;
+    margin-right: 8px;
+    margin-left: 8px;
+    font-size: 16px;
+}
+
+.filter {
+    height: 38px;
+    width: 70px;
+    display: flex;
+    background: #8AEa92;
+    align-items: center;
+    justify-content: space-around;
+    color: white; 
+    border-radius: .2em;
+}
+
+.reset {
+    height: 38px;
+    width: 70px;
+    background: #3B5249;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    border-radius: .2em;
+}
+
+.filter:hover {
+    cursor: pointer;
+}
+
+.reset:hover {
+    cursor: pointer;
+}
+
+.filter:active {
+    box-shadow: inset 0 0 8px black;
+}
+
+.reset:active {
+    box-shadow: inset 0 0 8px black;    
+}

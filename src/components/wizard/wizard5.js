@@ -3,6 +3,7 @@ import Header from '../header'
 import '../styles/wizard5.css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import axios from 'axios'
 
 import Active from '../../assets/step_active.png'
 import Completed from '../../assets/step_completed.png'
@@ -15,11 +16,20 @@ class wizard5 extends Component {
     super()
 
     this.cancel = this.cancel.bind(this)
+    this.complete = this.complete.bind(this)
 }
 
 cancel() {
     this.props.history.push('/dashboard')
 } 
+
+complete() {
+  const { houseName, houseDescription, address, city, state, zip, image_url, loan_amount, monthly_mortgage, desired_rent } = this.props
+
+  axios.post('/api/house/create', { houseName, houseDescription, address, city, state, zip, image_url, loan_amount, monthly_mortgage, desired_rent })
+  .then( () => console.log('Houses added to DB!'))
+  this.props.history.push('/dashboard')
+}
     render() {
         return(
             <div className='wizard_parent_container'>
@@ -52,9 +62,13 @@ cancel() {
                 </div>
                 <section className='button_container'>
                 <div onClick={ () => this.props.history.goBack() } className='back_button'>Previous Step</div>                 
-                <Link to='/dashboard'>
-                  <div className='next_button'>Complete</div>
-                </Link>
+                
+                  <div className='next_button'
+                  onClick={ () => this.complete() }
+                  >
+                  Complete
+                  </div>
+                
                 </section>
               </div>
           </div>
@@ -64,6 +78,14 @@ cancel() {
 
 const mapStateToProps = (state) => {
   return {
+    houseName: state.houseName,
+    houseDescription: state.houseDescription,
+    address: state.address,
+    city: state.city,
+    state: state.state,
+    zip: state.zip,
+    image_url: state.image_url,
+    loan_amount: state.loan_amount,
     monthly_mortgage: state.monthly_mortgage,
     desired_rent: state.desired_rent
   }

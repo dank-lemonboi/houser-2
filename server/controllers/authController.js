@@ -30,7 +30,6 @@ module.exports = {
     login: (req, res, next) => {
         const { username, password } = req.body
         const db = req.app.get('db')
-        console.log(req.session)
         db.check_username([username]).then( user => {
             if(user.length !== 0) {
                 const validPassword = bcrypt.compareSync(password, user[0].user_password)
@@ -40,7 +39,7 @@ module.exports = {
                     req.session.user.user_id = user[0].user_id
                     req.session.user.username = user[0].username
                     res.status(200).send()
-                    console.log('logged in!')
+                    console.log(req.session)
                 } else {
                     console.log('wrong password')
                     res.status(200).send('Invalid Password')
