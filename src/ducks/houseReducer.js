@@ -21,6 +21,7 @@ const GET_IMG_URL = 'GET_IMG_URL'
 const GET_LOAN_AMOUNT = 'GET_LOAN_AMOUNT'
 const GET_MONTHLY_MORTGAGE = 'GET_MONTHLY_MORTGAGE'
 const GET_DESIRED_RENT = 'GET_DESIRED_RENT'
+const CLEAR_FIELDS = 'CLEAR_FIELDS'
 
 export function getHomeName(name) {
     return {
@@ -90,11 +91,17 @@ export function getRent(rent) {
         payload: rent
     } 
 }
+
+export function cancel(initialState) {
+    return {
+        type: CLEAR_FIELDS,
+        payload: initialState
+    }
+}
 export default function reducer(state = initialState, action) {
     switch(action.type) {
         case GET_HOME_NAME:
            return Object.assign({}, state, { houseName: action.payload } )
-        
         case GET_DESCRIPTION:
            return Object.assign({}, state, { houseDescription: action.payload } )
         case GET_ADDRESS:
@@ -113,6 +120,8 @@ export default function reducer(state = initialState, action) {
             return Object.assign({}, state, { monthly_mortgage: action.payload } )
         case GET_DESIRED_RENT:
             return Object.assign({}, state, { desired_rent: action.payload })
+        case CLEAR_FIELDS:
+            return Object.assign( {}, {initialState: action.payload} )
         default:
             return state
     }

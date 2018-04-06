@@ -23,6 +23,15 @@ export default class Dashboard extends Component {
     }
     
     componentDidMount() {
+        axios.get('/api/me').then( () => {
+            axios.get(`/api/house/read?filterValue=${this.state.value}`).then( res => {
+                () => console.log('houses arrived!')
+                this.setState({
+                    houses: res.data
+                })
+            }).catch()
+        }).catch( () => {this.props.history.push('/')})
+
 
         axios.get(`/api/house/read?filterValue=${this.state.value}`).then( res => {
             () => console.log('houses arrived!')
@@ -31,9 +40,7 @@ export default class Dashboard extends Component {
             })
         }).catch()
 
-        axios.get('/api/me').then( () => {
-            console.log('good job!')
-        }).catch( () => {this.props.history.push('/')})
+        
     }
 
     delete(id) {
@@ -88,7 +95,7 @@ export default class Dashboard extends Component {
         <Header />
                 <div className='dashboard_container'>
                 <Link to='/wizard1'>
-                <div className='new_property_button'>Add New Property</div>
+                  <div className='new_property_button'>Add New Property</div>
                 </Link>
                 <div className='filter_body'>
                 <span>List properties with "desired rent" greater than: $ </span>  

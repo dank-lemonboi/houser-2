@@ -8,7 +8,7 @@ import axios from 'axios'
 import Active from '../../assets/step_active.png'
 import Completed from '../../assets/step_completed.png'
 
-import { getRent } from '../../ducks/houseReducer'
+import { getRent, cancel } from '../../ducks/houseReducer'
 
 
 class wizard5 extends Component {
@@ -20,6 +20,7 @@ class wizard5 extends Component {
 }
 
 cancel() {
+    this.props.cancel()
     this.props.history.push('/dashboard')
 } 
 
@@ -27,8 +28,8 @@ complete() {
   const { houseName, houseDescription, address, city, state, zip, image_url, loan_amount, monthly_mortgage, desired_rent } = this.props
 
   axios.post('/api/house/create', { houseName, houseDescription, address, city, state, zip, image_url, loan_amount, monthly_mortgage, desired_rent })
-  .then( () => console.log('Houses added to DB!'))
-  this.props.history.push('/dashboard')
+  .then( this.props.history.push('/dashboard') )
+ 
 }
     render() {
         return(
@@ -51,7 +52,7 @@ complete() {
                 </div>
 
                 <div className='input_wrapper'>
-                  <div className='recommended_rent'>Recommended Rent $ {+this.props.monthly_mortgage * 1.25}<span></span></div>
+                  <div className='recommended_rent'>Recommended Rent $ {+this.props.monthly_mortgage * 1.25}</div>
                   <div>
                     <span>Desired Rent</span>
                     <input 
@@ -91,4 +92,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {getRent})(wizard5)
+export default connect(mapStateToProps, { getRent, cancel })(wizard5)

@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 
-import { getHomeName, getDescription } from '../../ducks/houseReducer'
+import { getHomeName, getDescription, cancel } from '../../ducks/houseReducer'
 
 class Wizard1 extends Component {
     constructor() {
@@ -17,6 +17,7 @@ class Wizard1 extends Component {
     }
 
     cancel() {
+        this.props.cancel()
         this.props.history.push('/dashboard')
     }
 
@@ -71,4 +72,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { getHomeName, getDescription })(Wizard1)
+export default connect(mapStateToProps, { getHomeName, getDescription, cancel })(Wizard1)

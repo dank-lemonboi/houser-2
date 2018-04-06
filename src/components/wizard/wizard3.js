@@ -4,11 +4,12 @@ import '../styles/wizard3.css'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import { getUrl } from '../../ducks/houseReducer'
+import { getUrl, cancel } from '../../ducks/houseReducer'
 
 import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
+
 
 
 class wizard3 extends Component {
@@ -19,6 +20,7 @@ class wizard3 extends Component {
 }
 
 cancel() {
+    this.props.cancel()
     this.props.history.push('/dashboard')
 }  
   render() {
@@ -74,4 +76,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { getUrl })(wizard3)
+export default connect(mapStateToProps, { getUrl, cancel })(wizard3)

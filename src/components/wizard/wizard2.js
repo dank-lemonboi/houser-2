@@ -8,7 +8,7 @@ import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
 
-import { getAddress, getCity, getState, getZip } from '../../ducks/houseReducer'
+import { getAddress, getCity, getState, getZip, cancel } from '../../ducks/houseReducer'
 
 class wizard2 extends Component {
   constructor() {
@@ -18,6 +18,7 @@ class wizard2 extends Component {
 }
 
 cancel() {
+    this.props.cancel()
     this.props.history.push('/dashboard')
 }
     render() {

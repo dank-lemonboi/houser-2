@@ -8,7 +8,7 @@ import Active from '../../assets/step_active.png'
 import Inactive from '../../assets/step_inactive.png'
 import Completed from '../../assets/step_completed.png'
 
-import { getLoan, getMortgage } from '../../ducks/houseReducer'
+import { getLoan, getMortgage, cancel } from '../../ducks/houseReducer'
 
 
 class wizard4 extends Component {
@@ -19,6 +19,7 @@ class wizard4 extends Component {
 }
 
 cancel() {
+    this.props.cancel()
     this.props.history.push('/dashboard')
 } 
     render() {
@@ -78,4 +79,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, {getLoan, getMortgage} )(wizard4)
+export default connect(mapStateToProps, {getLoan, getMortgage, cancel } )(wizard4)
