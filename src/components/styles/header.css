@@ -4,7 +4,9 @@
     display: flex;
     justify-content: space-around;
     height: 60px;
-    font-family: 'Open Sans', sans-serif
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    position: fixed;
 }
 
 .header_container {

@@ -49,7 +49,7 @@ cancel() {
                     
                   <img className='image_container' 
                     src={this.props.image_url} 
-                    alt="property_image" 
+                    
                     />
                   </div>
                   <span>Image URL</span>

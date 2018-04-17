@@ -1,16 +1,19 @@
 .dashboard_container_parent {
+    position: relative;
     background: #AFD4C0;
     height: 100vh;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 .dashboard_container {
     background: rgb(231, 247, 238);
-    margin: 0 auto;
+    margin: 4.7% auto;
     padding-top: 16px;
     height: 100vh;
     width: 70%;
     box-sizing: border-box;
+    overflow: scroll;
 }
 
 .new_property_button {
@@ -85,7 +88,7 @@ a {
     height: 18px;
     width: 14px;
     position: absolute;
-    left: 145px;
+    left: 198px;
 }
 
 .property_detail_parent img:hover {

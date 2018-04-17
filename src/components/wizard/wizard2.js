@@ -51,6 +51,7 @@ cancel() {
                       value={address}
                   />
                 </div>
+              <div className='wiz2_small_inputs'>
                 <div className='wiz2_city_section'>
                   <span>City</span>
                   <input 
@@ -65,6 +66,7 @@ cancel() {
                       value={state}
                   />
                 </div>
+              </div>              
                 <div className='wiz2_zip_section'>
                   <span>Zip</span>
                   <input 
@@ -72,7 +74,7 @@ cancel() {
                       value={zip}
                   />
                 </div>
-
+              
 
                 </div>
 

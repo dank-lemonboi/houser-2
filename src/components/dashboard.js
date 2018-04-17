@@ -15,7 +15,7 @@ export default class Dashboard extends Component {
         this.state = {
             houses: [],
             value: 0
-        }
+     }
 
         this.delete = this.delete.bind(this)
         this.filter = this.filter.bind(this)
@@ -101,7 +101,7 @@ export default class Dashboard extends Component {
                 <span>List properties with "desired rent" greater than: $ </span>  
                     <input className='filter_input'
                         onChange={ (e) => this.setState({value: e.target.value}) }
-                        placeholder='0'
+                        placeholder={this.state.value}
                         />
                     
                      <div className='filter' onClick={this.filter}>Filter</div>

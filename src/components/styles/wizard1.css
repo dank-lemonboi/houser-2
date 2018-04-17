@@ -2,6 +2,8 @@
     width: 100%;
     background: #AFD4C0;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
 }
 
 .wizard_container {
@@ -10,6 +12,8 @@
     margin: 0 auto;
     background: rgb(231, 247, 238);
     box-sizing: border-box;
+    position: relative;
+    top: 60px;
 }
 
 .new_listing_top {

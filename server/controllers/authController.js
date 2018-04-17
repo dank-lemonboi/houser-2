@@ -21,7 +21,7 @@ module.exports = {
                     session_id_count ++
                     req.session.user.user_id = user[0].user_id
                     req.session.user.username = user[0].username
-                    console.log(req.session)
+                    // console.log(req.session)
                     res.status(200).send('Registration Successful')
                 }).catch(500)
             }

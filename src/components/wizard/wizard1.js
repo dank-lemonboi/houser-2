@@ -28,9 +28,7 @@ class Wizard1 extends Component {
             <div className="wizard_container">
               <div className="new_listing_top">
                 <div className="new_listing_text">Add New Listing</div>
-                <div className="cancel_button" onClick={() => this.cancel()}>
-                  Cancel
-                </div>
+                <div className="cancel_button" onClick={() => this.cancel()}>Cancel</div>
               </div>
               <div className="progress_steps">
                 <p className="steps">Step 1</p>
